@@ -3,15 +3,12 @@ RM			= rm -rf
 LIB			= libasm.a
 NASM		= nasm
 NFLAGS		= -f elf64
+TEST_FILE	= test/main.c
+TEST_OUT	= a.out
 INCS_DIR	= includes/
 
 SRCS		= $(addprefix srcs/,\
-			ft_strlen.s\
-			ft_strcmp.s\
-			ft_strcpy.s\
-			ft_write.s\
-			ft_read.s\
-			ft_strdup.s)
+			ft_strlen.s)
 
 OBJS		= $(SRCS:.s=.o)
 
@@ -28,6 +25,9 @@ clean:
 
 fclean		: clean
 			@$(RM) $(NAME) $(LIB) $(TEST_OUT)
+
+test		: all $(TEST_FILE) $(LIB)
+			@$(CC) $(TEST_FILE) $(LIB) -I$(INCS_DIR) -o $(TEST_OUT)
 
 re			: fclean all
 
