@@ -1,20 +1,20 @@
 BITS 64
 
-global _ft_strlen
+global ft_strlen
 
-_ft_strlen:
-	push	rcx
-	xor		rcx, rcx
+ft_strlen:
+	push	rcx			;save rcx
+	xor		rcx, rcx	;init rcx at 0
 
-_ft_strlen_next:
-	cmp		byte [rdi], 0
-	jz		_ft_strlen_end
+ft_strlen_next:
+	cmp		byte [rdi], 0	;
+	jz		ft_strlen_end
 
 	inc		rcx
 	inc		rdi
-	jmp		_ft_strlen_next
+	jmp		ft_strlen_next
 
-_ft_strlen_end:
+ft_strlen_end:
 	mov		rax, rcx
 
 	pop		rcx
