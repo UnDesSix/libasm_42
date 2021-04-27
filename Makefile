@@ -8,7 +8,8 @@ TEST_OUT	= a.out
 INCS_DIR	= includes/
 
 SRCS		= $(addprefix srcs/,\
-			ft_strlen.s)
+			ft_strlen.s\
+			ft_strcpy.s)
 
 OBJS		= $(SRCS:.s=.o)
 
@@ -26,7 +27,7 @@ clean:
 fclean		: clean
 			@$(RM) $(NAME) $(LIB) $(TEST_OUT)
 
-test		: all $(TEST_FILE) $(LIB)
+test		: re $(TEST_FILE) $(LIB)
 			@$(CC) $(TEST_FILE) $(LIB) -I$(INCS_DIR) -o $(TEST_OUT)
 
 re			: fclean all
