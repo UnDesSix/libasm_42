@@ -1,4 +1,5 @@
-CC			= clang -Wall -Wextra -Werror
+:x
+
 RM			= rm -rf
 LIB			= libasm.a
 NASM		= nasm
