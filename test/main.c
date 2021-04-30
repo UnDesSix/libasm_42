@@ -19,7 +19,7 @@ int main(void)
 	char	buffer[100]; // of size 100
 	char	dst[14];
 
-//	char	*src0 = NULL;
+	char	*src0 = NULL;
 	char	src1[] = "Matt";
 	char	src2[] = "Matthieu";
 	char	src3[] = "AA";
@@ -70,6 +70,7 @@ int main(void)
 	printf("\n//Test 6 :STRDUP//\n");
 	printf("MINE : %s\n", ft_strdup("Matt"));
 	printf("REAL : %s\n", strdup("Matt"));
+//	printf("REAL : %s\n", strdup(src0));
 
 	return (0);
 }
