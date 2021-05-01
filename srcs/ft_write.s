@@ -14,7 +14,8 @@ ft_write:
 ft_write_error:
 	push	rbx					; save rbx
 	mov		rbx, rax			; save rax into rbx
-	call	__errno_location wrt ..plt	; call errno function
+;	call	__errno_location wrt ..plt	; call errno function
+	call	__errno_location
 	neg		rbx					; rbx *= -1
 	mov		[rax], rbx			; rax = address of errno, so move rbx into dereferenced rax
 	mov		rax, -1				; put -1 in rax which is the final return value

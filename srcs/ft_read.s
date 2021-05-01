@@ -14,7 +14,8 @@ ft_read:
 ft_read_error:
 	push	rbx					; save rbx value
 	mov		rbx, rax			; save error code into rbx
-	call	__errno_location wrt ..plt	; call errno function
+;	call	__errno_location wrt ..plt	; call errno function
+	call	__errno_location
 	neg		rbx					; rbx *= -1
 	mov		[rax], rbx			; rax = address of errno, so move rbx into dereferenced rax
 	mov		rax, -1				; put -1 in rax which is the final return value

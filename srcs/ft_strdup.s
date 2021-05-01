@@ -13,7 +13,8 @@ ft_strdup_malloc:
 	mov		rbx, rdi		; save the address of the initial string into rbx
 
 	mov		rdi, rcx		; save rdi (aka malloc's 1st arg) into rcx (aka length)
-	call	malloc wrt ..plt; malloc fuinction return either new str address either NULL
+;	call	malloc wrt ..plt; malloc fuinction return either new str address either NULL
+	call	malloc
 	cmp		rax, 0			; check if malloc fail, meaning is rax == 0 ?
 	je		ft_strdup_end	
 	mov		rdi, rax		; rdi is 1st arg => dst string
