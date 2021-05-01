@@ -1,5 +1,4 @@
-:x
-
+CC			= clang
 RM			= rm -rf
 LIB			= libasm.a
 NASM		= nasm
